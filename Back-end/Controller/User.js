@@ -1,5 +1,6 @@
 import User from "../Models/User.js";
 import bcrypt from "bcrypt"
+import  jwt from "jsonwebtoken";
 
 export const register=async(req,res)=>{
     const {name, email, password, role}= req.body;
@@ -45,7 +46,7 @@ export const login=async(req,res)=>{
             {
                 _id: user._id, role: user.role, email, name:user.name
             },
-            process.env.SECRET_KEY,
+           "qwertyuip",
             {expiresIn:"24h"}
         )
         return res.cookie("token", token, {

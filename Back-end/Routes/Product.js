@@ -4,8 +4,8 @@ import { deleteProduct, readAllProduct, createProduct } from "../Controller/Prod
 
 const productRoute= express.Router()
 
-productRoute.post("create",uploadImage.single("image"),createProduct)
-productRoute.get("readAll",readAllProduct)
+productRoute.post("/create",uploadImage.single("image"),createProduct)
+productRoute.get("/readAll",readAllProduct)
 productRoute.delete("delete/:id",deleteProduct)
 
 export default productRoute
